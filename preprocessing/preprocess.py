@@ -70,7 +70,7 @@ for file in tqdm(files):
     Datapre.main()
 
 root = '<path/to/your/directory>/data/mid/'
-output_root='<path/to/your/directory>/multidomain/_8_2/targetcd'
+output_root='<path/to/your/directory>/multidomain_data/_8_2/targetcd'
 field1='Books.csv'
 field2='CDs_and_Vinyl.csv'
 field3='Movies_and_TV.csv'
