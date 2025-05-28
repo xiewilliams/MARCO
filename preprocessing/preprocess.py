@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed May 28 11:25:54 2025
 
-@author: Administrator
-"""
 
 import pandas as pd
 import gzip
