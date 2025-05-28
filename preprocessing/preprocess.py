@@ -13,7 +13,24 @@ import argparse
 import json
 import warnings
 
+class DataPreprocessingMid():
+    def __init__(self,
+                 root,
+                 dealing):
+        self.root = root
+        self.dealing = dealing
 
+    def main(self):
+        print('Parsing ' + self.dealing + ' Mid...')
+        re = []
+        with gzip.open(self.root + 'raw/reviews_' + self.dealing + '_5.json.gz', 'rb') as f:
+            for line in tqdm.tqdm(f, smoothing=0, mininterval=1.0):
+                line = json.loads(line)
+                re.append([line['reviewerID'], line['asin'], line['overall']])
+        re = pd.DataFrame(re, columns=['uid', 'iid', 'y'])
+        print(self.dealing + ' Mid Done.')
+        re.to_csv(self.root + 'mid/' + self.dealing + '.csv', index=0)
+        return re
 
 def get_history(data, uid_set):
     pos_seq_dict = {}
@@ -47,9 +64,17 @@ def read_mid(root, field):
     re = pd.read_csv(path)
     return re
 
+files=["CDs_and_Vinyl","Books","Movies_and_TV","Electronics"]
+for file in tqdm(files):
+    Datapre=DataPreprocessingMid("<path/to/your/directory>",file)
+    Datapre.main()
 
-
+root = '<path/to/your/directory>/data/mid/'
 output_root='<path/to/your/directory>/multidomain/_8_2/targetcd'
+field1='Books.csv'
+field2='CDs_and_Vinyl.csv'
+field3='Movies_and_TV.csv'
+field4='Electronics.csv'
 
 df_book = read_mid(root, field1)
 df_cd = read_mid(root, field2)
