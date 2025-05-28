@@ -9,12 +9,14 @@ This repository provides the implementations of MARCO.
 
 ## Requirements
 
-- Python 3.8
-- Pytorch 
-- tensorflow 
-- Pandas
-- Numpy
-- Tqdm
+- `Python 3.8.10`
+- `Numpy==1.24.3`
+- `Pandas==2.0.3`
+- `Tensorflow==2.13.1` 
+- `Torch==2.1.1`
+- `Tqdm==4.61.2`
+  
+TensorFlow's Keras module is solely used for sequence padding (via pad_sequences) during the DataLoader construction process.
 
 
 ## Code Structure
