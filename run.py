@@ -307,5 +307,5 @@ class Run():
             self.CDRWithRL(model, data_meta, data_test, criterion, optimizer_meta,self.device,self.writer,self.weight_dir,self.performance)
             return self.results['rlcdr_mae'], self.results['rlcdr_rmse']
         else:
-            print("Input algorithm wrong, only tgt, cmf, sscdr, ptupcdr, remit are available...")
+            print("Input algorithm wrong")
             exit(1)
