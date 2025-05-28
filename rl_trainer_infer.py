@@ -158,8 +158,8 @@ class Infer():
     def eval_mae(self):
         print('Evaluating MAE:')
         self.cdr_model.eval()
-        self.agent.actor.train()
-        self.agent.critic.train()
+        self.agent.actor.eval()
+        self.agent.critic.eval()
         targets, predicts,weight = list(), list(),list()
         loss = torch.nn.L1Loss()
         mse_loss = torch.nn.MSELoss()
