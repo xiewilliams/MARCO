@@ -1,6 +1,6 @@
 # MARCO: A Cooperative Knowledge Transfer Framework for Personalized Cross-domain Recommendations
 
-Recommender systems (RecSys) frequently encounter data sparsity issues, particularly when addressing cold-start scenarios involving new users or items. Multi-source cross-domain recommendation (CDR) addresses these challenges by transferring valuable knowledge from multiple source domains to enhance recommendations in a target domain. However, existing reinforcement learning (RL)-based CDR methods typically rely on a single-agent framework, leading to negative transfer issues caused by inconsistent domain contributions and inherent distributional discrepancies among sources. To overcome these limitations, MARCO, a novel Multi-Agent Reinforcement Learning-based Cross-Domain recommendation framework, is proposed. It leverages cooperative multiagent reinforcement learning (MARL), where each agent is dedicated to estimating the contribution from an individual source domain, effectively managing credit assignment and mitigating negative transfer. In addition, an entropy-based action diversity penalty is introduced to enhance policy expressiveness and stabilize training by encouraging diverse agents’ joint actions. Extensive experiments across four benchmark datasets demonstrate MARCO’s superior performance over state-of-the-art methods, highlighting its robustness and strong generalization capabilities. 
+Recommender systems frequently encounter data sparsity issues, particularly when addressing cold-start scenarios involving new users or items. Multi-source cross-domain recommendation (CDR) addresses these challenges by transferring valuable knowledge from multiple source domains to enhance recommendations in a target domain. However, existing reinforcement learning (RL)-based CDR methods typically rely on a single-agent framework, leading to negative transfer issues caused by inconsistent domain contributions and inherent distributional discrepancies among source domains. To overcome these limitations, MARCO, a Multi-Agent Reinforcement Learning-based Cross-Domain recommendation framework, is proposed. It leverages cooperative multi-agent reinforcement learning, where each agent is dedicated to estimating the contribution from an individual source domain, effectively managing credit assignment and mitigating negative transfer. In addition, an entropy-based action diversity penalty is introduced to enhance policy expressiveness and stabilize training by encouraging diverse agents' joint actions. Extensive experiments across four benchmark datasets demonstrate MARCO's superior performance over state-of-the-art methods, highlighting its robustness and strong generalization capabilities.
 
 
 ## Introduction
@@ -101,4 +101,31 @@ python entry.py --gpu 1 --lr 0.02
 
 # Reset seed (we use seed in[900, 1000, 10, 2020, 500])
 python entry.py --seed 900
+```
+
+## Cite
+```bash
+@inproceedings{xie2025marco,
+  title = {MARCO: A Cooperative Knowledge Transfer Framework for Personalized Cross-domain Recommendations},
+  author = {Xie, Lili and Zhang, Yi and Qiu, Ruihong and Liu, Jiajun and Wang, Sen},
+  booktitle = {Proceedings of the 2025 Annual International
+ACM SIGIR Conference on Research and Development in Information Retrieval in
+the Asia Pacific Region},
+  year = {2025}
+}
+```
+## Acknowledgement
+Our code is based on [REMIT's repo](https://github.com/mufusu21/REMIT). The BibTex for REMIT is:
+```bash
+@inproceedings{sun2023remit,
+  title = {REMIT: Reinforced Multi-Interest Transfer for Cross-Domain Recommendation},
+  author = {Sun, Caiqi and Gu, Jiewei and Hu, BinBin and Dong, Xin and Li, Hai and Cheng, Lei and Mo, Linjian},
+  booktitle = {Proceedings of the AAAI conference on artificial intelligence},
+  series = {AAAI's 2023},
+  location = {Washington, DC, USA},
+  url = {https://doi.org/10.1609/aaai.v37i8.26214},
+  doi = {10.1609/aaai.v37i8.26214},
+  pages = {9900--9908},
+  year = {2023}
+}
 ```
